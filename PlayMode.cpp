@@ -43,6 +43,7 @@ Load< Sound::Sample > dusty_floor_sample(LoadTagDefault, []() -> Sound::Sample c
 	return new Sound::Sample(data_path("beep.wav"));
 });
 
+
 PlayMode::PlayMode() : scene(*hexapod_scene) {
 	//get pointers to leg for convenience:
 
@@ -204,7 +205,7 @@ void PlayMode::update(float elapsed) {
 			std::vector<int> times = button_easy.pressed ? easy.times : hard.times;
 			std::vector<int> news = button_easy.pressed ? easy.news : hard.news;
 			float d1 = button_easy.pressed ? 3.0f : 5.0f;
-			float d2 = button_easy.pressed ? 4.0f : 7.0f;
+			float d2 = button_easy.pressed ? 4.0f : 6.0f;
 
 			std::queue<int> diff;
 			int count = 0;
@@ -238,7 +239,8 @@ void PlayMode::update(float elapsed) {
 					glm::vec2 prevyz = nextyz; 
 					curryz = glm::vec2(-spawn_w + 2.0f*spawn_w * randf(), -spawn_h + 2.0f*spawn_h * randf());
 					nextyz = glm::vec2(-spawn_w + 2.0f*spawn_w * randf(), -spawn_h + 2.0f*spawn_h * randf());
-					while (glm::length(curryz - nextyz) > 3.0f * (currdiff+1) || glm::length(curryz - prevyz) > 4.0f){
+					while (glm::length(curryz - nextyz) > d1 * (currdiff+1) || glm::length(curryz - prevyz) > d2 ||
+					       glm::length(curryz - nextyz) < 0.5f * (currdiff+1) || glm::length(curryz - prevyz) < 1.0f){
 						curryz = glm::vec2(-spawn_w + 2.0f*spawn_w * randf(), -spawn_h + 2.0f*spawn_h * randf());
 						nextyz = glm::vec2(-spawn_w + 2.0f*spawn_w * randf(), -spawn_h + 2.0f*spawn_h * randf());
 					}

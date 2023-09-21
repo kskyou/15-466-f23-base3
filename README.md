@@ -1,8 +1,8 @@
-# (TODO: your game's title)
+# Musical Squares
 
-Author: (TODO: your name)
+Author: Kevin You
 
-Design: (TODO: In two sentences or fewer, describe what is new and interesting about your game.)
+Design: A rhythm game set in 3D perspective, where the player must rely on music to estimate the depth of tiles. Track consists of human selected time stamps and randomly generated locations. 
 
 Screen Shot:
 
@@ -10,6 +10,6 @@ Screen Shot:
 
 How To Play:
 
-(TODO: describe the controls and (if needed) goals/strategy.)
+Use mouse to control view and z or x to click on squares as they approach the larger frame. A few plays may be necessary to get familiarized with the music. 
 
 This game was built with [NEST](NEST.md).

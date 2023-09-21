@@ -8,7 +8,6 @@ dist/README-opusfile.txt
 dist/game.ilk
 dist/game.pdb
 dist/SDL2.dll
-dist/game
 dist/game.exe
 scenes/show-meshes*
 scenes/show-scene*
